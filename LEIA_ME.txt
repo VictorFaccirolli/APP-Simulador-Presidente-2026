@@ -1,0 +1,68 @@
+SIMULADOR PRESIDENCIAL 2026 — versão 1.2
+Simulador desenvolvido por Victor Faccirolli
+
+COMO ABRIR NO WINDOWS
+1. Instale Python 3.10 ou superior, marcando “Add Python to PATH”.
+2. Extraia todo o ZIP para uma pasta.
+3. Dê dois cliques em INICIAR_WINDOWS.bat.
+4. O aplicativo abrirá no navegador. Mantenha a janela de comandos aberta.
+A primeira execução precisa de internet para instalar as dependências.
+
+PELO TERMINAL (Windows, Mac ou Linux)
+Na pasta extraída, execute:
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+Se o sistema usa python3, substitua python por python3.
+
+USO
+Eleitorado fixo: 158.745.463 (TSE, incluindo exterior).
+Informe a abstenção como percentual do eleitorado apto. O painel mostra
+ausentes e comparecimento estimados. Ausentes são arredondados ao inteiro
+mais próximo; comparecimento = eleitorado menos ausentes.
+Escolha Percentuais ou Votos. Preencha todos os candidatos, brancos e nulos.
+No modo Percentuais, a soma deve fechar exatamente 100% de quem comparece (até 2 casas decimais).
+No modo Votos, use quantidades inteiras cuja soma (candidatos + brancos +
+nulos) seja igual ao comparecimento estimado. Se não fechar, o programa
+informa a diferença; não transforma votos faltantes em abstenção automaticamente. Deixe zero para os demais candidatos.
+Clique em “Calcular resultado e gerar gráficos”. Alterações posteriores exigem
+novo clique em Calcular. Cada assessor pode nomear e baixar seu próprio cenário.
+Os gráficos PNG podem ser usados em apresentações. A tabela pode ser baixada
+em CSV, e os dados/resultados em JSON. O JSON é exportação, sem importação
+nesta versão. Downloads são locais; não há envio de dados nem consulta automática
+a pesquisas ou apuração. As sessões do navegador têm resultados separados.
+
+CÁLCULO
+Somente votos de candidatos são válidos. Brancos e nulos não entram na divisão.
+Mais de 50% dos votos válidos: vitória simulada no primeiro turno.
+Exatamente 50%: segundo turno. A decisão não usa o percentual arredondado.
+Empates que afetam as vagas são sinalizados, sem escolher arbitrariamente.
+Sem votos válidos: o programa pede correção dos dados.
+Não existem probabilidades de vitória nesta versão: o resultado depende dos
+valores preenchidos. Não é pesquisa eleitoral ou resultado oficial.
+
+CANDIDATOS
+Lista inicial em ordem alfabética, consultada em 29/09/2026 na reportagem:
+https://noticias.uol.com.br/eleicoes/2026/09/29/quem-sao-os-candidatos-a-presidente-da-republica-nas-eleicoes-2026.ghtm
+Pode ser editada na tela ou em candidatos.json. A lista não constitui verificação
+jurídica de registros: confira substituições e situação atual no TSE:
+https://divulgacandcontas.tse.jus.br/
+Regra dos votos válidos:
+https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/votos-em-branco-ou-nulos-nao-sao-transferidos-para-o-vencedor-nem-cancelam-uma-eleicao
+
+ARQUIVOS
+app.py: interface e gráficos.
+calculo.py: regra de cálculo independente da interface.
+candidatos.json: nomes iniciais editáveis.
+requirements.txt: dependências.
+INICIAR_WINDOWS.bat: instalador/inicializador.
+
+VERSÃO 1.2
+Cabeçalho no padrão do simulador de deputados, com Eng. Victor Faccirolli.
+Fotos oficiais incorporadas ao pacote; não precisam de internet para aparecer.
+Gráfico adicional do eleitorado, com votos válidos, brancos, nulos e abstenção.
+Estimativas por percentuais são convertidas em quantidades inteiras pelo método
+dos maiores restos; o total fecha com o comparecimento. A decisão de primeiro
+turno usa as proporções originais, sem arredondar as estimativas de pessoas.
+Mudar só a abstenção, mantendo a distribuição percentual, não altera a
+classificação nem os percentuais válidos, apenas o número estimado de votos.
+Detalhes e fontes em FONTES.txt.

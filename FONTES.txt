@@ -1,0 +1,11 @@
+ELEITORADO: 
+158.745.463; incluindo 918.876 no exterior.
+Fonte TSE publicada em 20/07/2026; consultada 02/10/2026.
+https://www.tse.jus.br/comunicacao/noticias/2026/Julho/mais-de-158-milhoes-de-eleitores-estao-aptos-votar-nas-eleicoes-2026
+
+FOTOS E IDENTIFICAÇÃO: TSE
+https://dadosabertos.tse.jus.br/dataset/candidatos-2026
+https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/fotos/foto_cand2026_BR_div.zip
+https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip
+Geração CSV: 02/10/2026 08:31:12. Associação foto-candidato por SQ_CANDIDATO.
+A lista inicial de 13 nomes da versão anterior foi mantida. Fotos não certificam situação jurídica da candidatura.
